@@ -1,0 +1,25 @@
+{
+  "name": "@xiangxinwomenziji/using-codegraph",
+  "version": "0.1.0",
+  "description": "Claude Code skill: enforce codegraph-first code exploration. Use when searching, reading, adding, or modifying code in a workspace with codegraph MCP available.",
+  "type": "module",
+  "bin": { "using-codegraph-install": "bin/install.js" },
+  "engines": { "node": ">=18" },
+  "files": [
+    "bin/",
+    "SKILL.md",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "keywords": ["claude-code", "skill", "codegraph", "mcp", "code-intelligence"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiangxinwomenziji/using-codegraph.git"
+  },
+  "bugs": { "url": "https://github.com/xiangxinwomenziji/using-codegraph/issues" },
+  "homepage": "https://github.com/xiangxinwomenziji/using-codegraph#readme"
+}
