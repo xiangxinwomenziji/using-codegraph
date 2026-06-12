@@ -24,13 +24,15 @@ npx @xiangxinwomenziji/using-codegraph install
 
 ## 已验证环境
 
+[![CI](https://github.com/xiangxinwomenziji/using-codegraph/actions/workflows/ci.yml/badge.svg)](https://github.com/xiangxinwomenziji/using-codegraph/actions/workflows/ci.yml)
+
 | 操作系统 | 状态 |
 |---|---|
-| Windows 11 (本开发机) | ✅ 端到端验证 |
-| macOS | ⚠️ 已文档化,本版本未验证 |
-| Linux | ⚠️ 已文档化,本版本未验证 |
+| Windows (latest) | ✅ CI 验证 (Node 18, 20, 22) |
+| macOS (latest) | ✅ CI 验证 (Node 18, 20, 22) |
+| Ubuntu (latest) | ✅ CI 验证 (Node 18, 20, 22) |
 
-安装路径 `~/.claude/skills/using-codegraph/SKILL.md` 在三平台一致(Windows 是 `%USERPROFILE%\.claude\skills\...`)。安装脚本用的 `node:fs` / `node:os` / `node:path` 跨平台。欢迎帮验 macOS / Linux,提个 PR 即可。
+安装路径 `~/.claude/skills/using-codegraph/SKILL.md` 在三平台一致(Windows 是 `%USERPROFILE%\.claude\skills\...`)。每次 push 到 `main` 与每个 PR 都会跑 `node --test` + 端到端 install/uninstall 烟雾测试,三平台全覆盖。
 
 ## 卸载
 
@@ -42,7 +44,7 @@ npx @xiangxinwomenziji/using-codegraph uninstall
 
 ## 发布
 
-v0.1.0 本次只发包源码,`npm publish` 不在自动构建里——需要手动准备:
+本包只发包源码,`npm publish` 不在自动构建里——需要手动准备:
 
 1. 在 npmjs.org 注册 `xiangxinwomenziji` 这个 handle 的账号(没有就建一个)
 2. 在 npmjs.org 上创建 `xiangxinwomenziji` 组织(scoped 包必须有组织)

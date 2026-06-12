@@ -24,13 +24,15 @@ For example, ask "where is `usePermission` defined and what does it call?" — t
 
 ## Verified environments
 
+[![CI](https://github.com/xiangxinwomenziji/using-codegraph/actions/workflows/ci.yml/badge.svg)](https://github.com/xiangxinwomenziji/using-codegraph/actions/workflows/ci.yml)
+
 | OS | Status |
 |---|---|
-| Windows 11 (this dev machine) | ✅ Verified end-to-end |
-| macOS | ⚠️ Documented; not yet verified on this release |
-| Linux | ⚠️ Documented; not yet verified on this release |
+| Windows (latest) | ✅ Verified via CI (Node 18, 20, 22) |
+| macOS (latest) | ✅ Verified via CI (Node 18, 20, 22) |
+| Ubuntu (latest) | ✅ Verified via CI (Node 18, 20, 22) |
 
-The install path `~/.claude/skills/using-codegraph/SKILL.md` is identical across platforms (Windows uses `%USERPROFILE%\.claude\skills\...`). The `node:fs` / `node:os` / `node:path` modules used by the install script are cross-platform. Help verifying on macOS / Linux is welcome — open a PR.
+The install path `~/.claude/skills/using-codegraph/SKILL.md` is identical across platforms (Windows uses `%USERPROFILE%\.claude\skills\...`). Every push to `main` and every PR runs `node --test` plus an end-to-end install/uninstall smoke test on all three OSes.
 
 ## Uninstall
 
@@ -42,7 +44,7 @@ The target directory is removed; nothing else is touched. Restart Claude Code to
 
 ## Publishing
 
-This v0.1.0 release ships the package source. The `npm publish` step is **not** included in the build — it requires manual setup:
+This release ships the package source. The `npm publish` step is **not** included in the build — it requires manual setup:
 
 1. An npmjs.org account under the `xiangxinwomenziji` handle (create one if needed)
 2. The `xiangxinwomenziji` organization created on npmjs.org (scoped packages require this)

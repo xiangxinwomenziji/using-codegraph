@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:   [ubuntu-latest, macos-latest, windows-latest]
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Show env
+        run: |
+          node --version
+          npm --version
+        shell: bash
+
+      - name: Run unit tests
+        run: node --test __tests__/install.test.mjs
+
+      - name: Smoke test install/uninstall (shebang path)
+        shell: bash
+        run: |
+          export HOME="$RUNNER_TEMP/fakehome"
+          export USERPROFILE="$HOME"
+          mkdir -p "$HOME"
+          node bin/install.js install
+          test -f "$HOME/.claude/skills/using-codegraph/SKILL.md" || (echo "SKILL.md not installed" && exit 1)
+          node bin/install.js uninstall
+          test ! -d "$HOME/.claude/skills/using-codegraph" || (echo "uninstall did not remove dir" && exit 1)
+          echo "smoke test passed"

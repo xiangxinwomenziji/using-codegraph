@@ -1,6 +1,6 @@
 {
   "name": "@xiangxinwomenziji/using-codegraph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Claude Code skill: enforce codegraph-first code exploration. Use when searching, reading, adding, or modifying code in a workspace with codegraph MCP available.",
   "type": "module",
   "bin": { "using-codegraph-install": "bin/install.js" },
