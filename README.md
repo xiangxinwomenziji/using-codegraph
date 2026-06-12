@@ -44,7 +44,7 @@ The target directory is removed; nothing else is touched. Restart Claude Code to
 
 ## Publishing
 
-This v0.1.0 release ships the package source. The `npm publish` step is **not** included in the build — it requires manual setup:
+This release ships the package source. The `npm publish` step is **not** included in the build — it requires manual setup:
 
 1. An npmjs.org account under the `xiangxinwomenziji` handle (create one if needed)
 2. The `xiangxinwomenziji` organization created on npmjs.org (scoped packages require this)

@@ -44,7 +44,7 @@ npx @xiangxinwomenziji/using-codegraph uninstall
 
 ## 发布
 
-v0.1.0 本次只发包源码,`npm publish` 不在自动构建里——需要手动准备:
+本包只发包源码,`npm publish` 不在自动构建里——需要手动准备:
 
 1. 在 npmjs.org 注册 `xiangxinwomenziji` 这个 handle 的账号(没有就建一个)
 2. 在 npmjs.org 上创建 `xiangxinwomenziji` 组织(scoped 包必须有组织)
